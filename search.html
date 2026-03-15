@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dessert Corner-search</title>
+    <link rel="stylesheet" href="style.css" >
+    <!-- these links are for fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="search.css" >
+
+</head>
+<body>
+    <div id="preloader">
+  <div class="loader-box">
+    <div class="icon">🍰</div>
+    <p class="loading-text">Loading something delicious...</p>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+   </div>
+
+   <nav id="navbar">
+  <div class="nav-logo">
+    <span class="logo-icon">🍽️</span>
+    <span class="logo-text">The Dessert Corner</span>
+  </div>
+
+  <div class="nav-actions">
+    <a href="index.html" class="back-btn">← Back to Home</a>  
+    <a  class="back-btn" style="color:#c4956a">Search</a>
+    <a href="saved.html" class="back-btn" >Saved</a>
+  </div>
+   </nav>
+
+   <!-- HERO -->
+    <section class="search-hero">
+    <div class="hero-line"></div>
+    <h1 class="search-hero-title">Find Your Recipe</h1>
+    <p class="search-hero-sub">Search by name or ingredients — we will find it for you.</p>
+    <div class="hero-line"></div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+
+    <!-- TOGGLE BUTTONS -->
+    <div class="toggle-btns">
+        <button class="toggle-btn active-toggle" id="btn-name">Search by Name</button>
+        <button class="toggle-btn" id="btn-ingredients">Search by Ingredients</button>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar-box">
+        <input type="text" id="search-input" class="search-input" placeholder="Enter recipe name..." />
+        <button class="search-btn" id="search-go">Search</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-grid" id="results-grid"></div>
+
+    </section>
+
+
+
+  <div id="toast" class="toast"></div>
+  <footer id="footer">
+    <div class="footer-top">
+      <span class="footer-logo">🍰 The Dessert Corner</span>
+      <p class="footer-tagline">Where every bite tells a story.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home" class="footer-link">Home</a>
+      <a href="#how-it-works" class="footer-link">How It Works</a>
+      <a href="#search-invite" class="footer-link">Search</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 The Dessert Corner. By Amal Nassour</p>
+    </div>
+ </footer>
+  <script src="search.js"></script>
+</body>
+</html>

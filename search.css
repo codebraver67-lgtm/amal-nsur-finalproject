@@ -1,0 +1,361 @@
+:root {
+  --olive: #6b7c3f;
+  --beige: #f5f0e8;
+  --navy: #1e2d4a;
+  --cream: #fffdf7;
+  --warm-brown: #c4956a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: var(--beige);
+  color: var(--navy);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/*______________________________________________end of the general ______________________________________________*/
+/*nav*/
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.back-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--beige);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: var(--warm-brown);
+}
+
+.heart-btn {
+  font-size: 29px;
+  color: var(--beige);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.heart-btn:hover {
+  color: var(--warm-brown);
+}
+
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--navy);
+  color: var(--beige);
+  font-size: 11px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 1px solid var(--warm-brown);
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/*______________________________________________end of the nav ______________________________________________*/
+/*main/
+
+/* ===== SEARCH HERO ===== */
+.search-hero {
+  background-color: var(--cream);
+  padding: 80px 40px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 1.4s ease forwards;
+}
+
+.search-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.search-hero-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: var(--olive);
+  letter-spacing: 2px;
+}
+
+/* ===== SEARCH SECTION ===== */
+.search-section {
+  background-color: var(--beige);
+  padding: 60px 40px;
+  text-align: center;
+  min-height: 40vh;
+}
+
+/* ===== TOGGLE BUTTONS ===== */
+.toggle-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 40px;
+  border: 1px solid var(--navy);
+  width: fit-content;
+  margin: 0 auto 40px;
+}
+
+.toggle-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--navy);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.active-toggle {
+  background-color: var(--navy);
+  color: var(--beige);
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar-box {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.search-input {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  padding: 14px 24px;
+  border: 1px solid var(--navy);
+  border-right: none;
+  background-color: var(--cream);
+  color: var(--navy);
+  width: 100%;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+.search-input::placeholder {
+  color: var(--warm-brown);
+}
+
+.search-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background-color: var(--navy);
+  color: var(--beige);
+  border: 1px solid var(--navy);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--warm-brown);
+  border-color: var(--warm-brown);
+}
+
+/* ===== RESULTS GRID ===== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.recipe-card {
+  background-color: var(--cream);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(30, 45, 74, 0.1);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-card-body {
+  padding: 20px;
+}
+
+.recipe-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 14px;
+  letter-spacing:1px;
+}
+
+.recipe-card-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cream);
+  background-color: var(--navy);
+  padding: 10px 20px;
+  border: 1px solid var(--navy);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.recipe-card-btn:hover {
+  background-color: transparent;
+  color: var(--navy);
+}
+
+@media (max-width: 1024px) {
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .search-hero-title { font-size: 38px; }
+  .search-section { padding: 40px 20px; }
+}
+
+@media (max-width: 480px) {
+  .search-hero-title { font-size: 28px; }
+  .results-grid { grid-template-columns: 1fr; }
+  .toggle-btn { padding: 10px 18px; font-size: 11px; }
+}
+
+/*toast*/
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--navy);
+  color: var(--beige);
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 14px 30px;
+  border-left: 3px solid var(--warm-brown);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.save-btn {
+  font-size: 20px;
+  cursor: pointer;
+  color:var(--border);
+  transition: color 0.3s ease;
+}
+
+.save-btn:hover {
+  color: var(--warm-brown);
+  padding: 5px;
+  border: 1px solid var(--warm-brown);
+  border-radius: 90px;
+  
+}
+
+.save-btn.saved {
+  color: var(--warm-brown);
+}
+
+
+
+
+
+
+
+
+/*________________________________________saved_____________________________________________*/
+/*________________________________________saved_____________________________________________*/
+/*________________________________________saved_____________________________________________*/
+/*________________________________________saved_____________________________________________*/
+
+
+/* empty message when no recipes are saved */
+.empty-msg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 60px 0;
+}
+
+/* clear all button */
+.clear-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  background-color: var(--navy);
+  color: var(--beige);
+  border: 1px solid var(--beige);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  margin: 0 auto 40px;
+}
+
+.clear-btn:hover {
+  background-color: var(--beige);
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
